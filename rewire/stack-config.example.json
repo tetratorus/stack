@@ -1,0 +1,8 @@
+{
+    "services": {
+        "includes": ["spine-serve"]
+    },
+    "volumes": {
+        "spine-lake": "spine-lake"
+    }
+}
