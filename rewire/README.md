@@ -1,6 +1,6 @@
 # rewire/ — expose sg-urban-spine Gold through a TWA stack
 
-[sg-urban-spine](https://github.com/tetratorus/sg-urban-spine) keeps model results as **Gold** tables in a lake (GeoParquet).
+[sg-urban-spine](https://github.com/tetratorus/saas-middleware/tree/sg-urban-spine) keeps model results as **Gold** tables in a lake (GeoParquet).
 They are published by Write-Audit-Publish, and each one carries OpenLineage-style lineage. `spine serve` is the spine's
 **view** layer: it serves Silver and published Gold as OGC API Features (GeoJSON, EPSG:4326). Here it runs as a
 stack-manager custom container, which puts the spine's Gold at `http://localhost:3838/spine/` next to GeoServer, Ontop and the
@@ -11,7 +11,7 @@ is changed.
 |---|---|
 | `services/spine-serve.json` | Stack-manager service config. Copy it to `stack-manager/inputs/config/services/`. |
 | `stack-config.example.json` | Stack config snippet: include `spine-serve`, populate volume `spine-lake` |
-| `Dockerfile` | Builds `localhost/sg-urban-spine-serve:0.1.0` (`pip install git+https://github.com/tetratorus/sg-urban-spine@main`) |
+| `Dockerfile` | Builds `localhost/sg-urban-spine-serve:0.1.0` (`pip install git+https://github.com/tetratorus/saas-middleware@sg-urban-spine`) |
 | `tests/` | pytest: checks the config's shape, then runs the config's own `Command` on a demo lake and reads Gold back as features |
 
 ## Setup

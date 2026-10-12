@@ -6,7 +6,6 @@ from pathlib import Path
 import geopandas as gpd
 import pandas as pd
 from shapely.geometry import box
-
 from spine.lake import Lake
 from spine.transform import execute, load_descriptor
 
@@ -15,7 +14,7 @@ id: demo.plot_capacity
 version: 0.1.0
 kind: transform
 title: Demo - allowable GFA = plot area x gross plot ratio (spine toy example)
-upstream: {repo: tetratorus/sg-urban-spine, license: MIT}
+upstream: {repo: tetratorus/saas-middleware (branch sg-urban-spine), license: MIT}
 runtime: {type: python, entrypoint: "adapter:run"}
 inputs:
   - {name: plots, source: "silver:plots", columns: [plot_id, area_m2]}
