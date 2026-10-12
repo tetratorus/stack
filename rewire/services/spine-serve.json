@@ -1,0 +1,25 @@
+{
+    "ServiceSpec": {
+        "Name": "spine-serve",
+        "TaskTemplate": {
+            "ContainerSpec": {
+                "Image": "localhost/sg-urban-spine-serve:0.1.0",
+                "Command": ["spine", "--lake", "/lake", "serve", "--host", "0.0.0.0", "--port", "8090"],
+                "Mounts": [
+                    {
+                        "Type": "volume",
+                        "Source": "spine-lake",
+                        "Target": "/lake",
+                        "ReadOnly": true
+                    }
+                ]
+            }
+        }
+    },
+    "endpoints": {
+        "features": {
+            "url": "http://localhost:8090/",
+            "externalPath": "/spine/"
+        }
+    }
+}
